@@ -126,7 +126,7 @@ var require = (function (global, evalText) {
   
   return require;
   
-}((0,eval)('this'), function evalText(modUrl, modText) {
+}((0,eval)('this'), function evalText(/*modUrl, modText*/) {
   var exports = {};
   var module = {};
   Object.defineProperty(module, 'exports', {
@@ -141,7 +141,7 @@ var require = (function (global, evalText) {
     },
   });
   
-  eval(modText + '\n//# sourceURL=' + modUrl);
+  eval([].pop.call(arguments) + '\n//# sourceURL=' + [].pop.call(arguments));
   
   return exports;
 }));
